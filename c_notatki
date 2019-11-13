@@ -1,0 +1,58 @@
+
+/* dlugi comment
+przez wiele linijek */
+
+const float PI = 3.14159 // mozna tez "float const" - nie da sie jej zmienic, wywali error
+#define PI 3.14159 // preprocesor przed kompilacja zamienia wszytskie wystapienia zmiennej w kodzie podana liczba
+// nie musi jej trzymac w pamieci
+#include <stdbool.h> // include "insertuje wszystko pliku headera na poczatek kodu"
+#include <stdio.h> // m.in. polecenia prinft, scanf
+bool a = false;
+#include "lib.h" // w cudzyslowie szuka w folderze projektu
+
+/* Proces kompilacji:
+Pre-processor - usuwa komentarze, robi macro expansion (?) i header file expansion (temp file.i) 
+Kompilator - sprawdza syntax errory, tlumaczy na assembly language i [optymalizuje kod dla lepszego performancu]
+Assembler - zamienia w low level machine code (binarny) - object file (.obj w Win lub .o w Linuxie)
+Linker - linkuje pliki .o ze soba, i np. funkcja printf jest linkowana ze swoja oryginalna definicja
+*/
+
+int = keyword
+num = identifier
+= + operators
+5, 4 = literals
+; and whitespace = separators
+
+https://codeforwin.org/2017/08/keywords-identifiers-c.html
+
+
+main() - pierwsze execowana funkcja
+int main(int argc, char * argv[]) main(int argc, char ** argv) // nowe kompilatory obsluguja taka deklaracje
+// przyjmuje wtedy argumenty z cli - argc oznacza liczbe argumentow, argv to array string argumentow - wszystkie w jednym (?)
+int main() // oznacza to, ze w przeciwienstwie do void zwraca wartosc (np. 0), ze program zakonczyl z sukcesem
+// powyzsze dwie deklaracje - zgodne ze standardem ANSII
+// void main() - to zla praktyka, bo nie wiadomo czy sie zakonczyl
+return 0; // function terminate (0 = status ok)
+
+&zmienna // &wskazuje adres w pamieci, wiec normalnie dodajemy go w scanf
+char name[20] // '\0' zajmuje ostatni spot
+scanf("%19s, name) // tu nie dajemy & bo array decajuje w pointer
+
+float x; //32-bitowa
+double y; // 64-bitowa
+sizeof(x) - w bajtach, np. 4 bajty * 8 bitow - 32bity
+%d - decimal
+%f - float
+%s string
+%c - char
+%lu - unsigned long
+
+
+Implicit (Automatic) type conversion - zawsze w te strone:
+bool -> char -> short int -> int -> unsigned int -> long -> unsigned -> long long -> float -> double -> long double
+char x = i'a';
+int z = 10;
+z + x = 107 //bo a to 97 w ascii
+
+// 44:00 w 3h
+
