@@ -22,17 +22,20 @@ int inputCheck(int arr[], int length, int cond_l, int cond_h)
 
 int main()
 {
-    int length = 4, arr[length];
-    inputCheck(arr, length, 1, 100000);
-    if (abs(arr[1] - arr[2]) < arr[0] && arr[1] + arr[2] > arr[0])
+    int length = 3, arr[length], nwd, nww;
+
+    inputCheck(arr, length, 1, 1000000);
+
+    for (int i = 1; i < arr[0]; i++)
     {
-        printf("TAK");
+        if (arr[0] % i == 0 && arr[1] % i == 0)
+        {
+            nwd = i;
+        }
     }
-    else
-    {
-        printf("NIE");
-    }
+    nww = arr[0]*arr[1]/nwd;
+
+    printf("NWW to %d", nww);
 
     return 0;
 }
-

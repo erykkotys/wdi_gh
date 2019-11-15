@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     printf("Bitwa pod Akcjum\n");
     return 0;
 }

@@ -22,17 +22,26 @@ int inputCheck(int arr[], int length, int cond_l, int cond_h)
 
 int main()
 {
-    int length = 4, arr[length];
-    inputCheck(arr, length, 1, 100000);
-    if (abs(arr[1] - arr[2]) < arr[0] && arr[1] + arr[2] > arr[0])
+    int length, arr[length], smallest = 0;
+    input_number:
+    printf("Ile liczb chcesz podac?\n");
+    scanf("%d", &length);
+    if (length > 1000 || length < 1)
     {
-        printf("TAK");
+        printf("Podaj liczbe miedzy 1 a 1000\n");
+        goto input_number;
     }
-    else
-    {
-        printf("NIE");
-    }
+    length++;
 
+    inputCheck(arr, length, -1000000, 1000000);
+
+    for (int i = 0; i < length; i++)
+    {
+        if (arr[i] < smallest)
+        {
+            smallest = arr[i];
+        }
+    }
+    printf("Najmniejsza liczba to: %d",smallest);
     return 0;
 }
-

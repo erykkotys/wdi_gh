@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
-    printf("Hello, World!\n");
+    double a=4;
+   printf("%f", pow(2, 0.5));
     return 0;
 }

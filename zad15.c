@@ -8,22 +8,33 @@ int inputCheck(int arr[], int length, int cond_l, int cond_h)
         {
             printf("Podaj liczbe nr %d: \n", i+1);
             scanf("%d", &arr[i]);
-            if (arr[i] > cond_l && arr[i] < cond_h)
+            if (arr[i] >= cond_l && arr[i] <= cond_h)
             {
                 break;
             }
             else
-                {
+            {
                 printf("Nieprawidlowa liczba\n");
-                }
+            }
         }
     }
 }
 
-    int main()
-    {
-        int length = 4, arr[length];
-        inputCheck(arr, length, 1, 10000);
+int main()
+{
+    int length = 3, arr[length], nwd;
 
-        return 0;
+    inputCheck(arr, length, 1, 1000000);
+
+    for (int i = 1; i < arr[0]; i++)
+    {
+        if (arr[0] % i == 0 && arr[1] % i == 0)
+        {
+            nwd = i;
+        }
     }
+
+    printf("NWD to %d", nwd);
+
+    return 0;
+}
