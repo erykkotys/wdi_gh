@@ -1,8 +1,21 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    double a=4;
-   printf("%f", pow(2, 0.5));
-    return 0;
+    int *p;
+    int a = 100;
+    p = &a;
+
+
+
+    p++;
+    ++p;
+    printf("%d \n", *p);
+    ++*p;
+    ++(*p);
+    ++*(p);
+    *p++;
+    (*p)++;
+    *(p)++;
+    *++p;
+    *(++p);
 }
