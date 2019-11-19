@@ -13,23 +13,30 @@ int main() {
     printf("ptr is : %d\n", *ptr);
     *ptr = 21; // zmieniamy wartosc adresu na ktory wskazuje pointer
     printf("ptr is : %d\n", *ptr);
+    *ptr = *ptr * 2; // bierzemy wartosc na ktora wskazuje pointer i podstawiamy tam
+    // podwojona wartosc na ktora wskazuje pointer
+    printf("ptr is : %d\n", *ptr);
 
     int array[100], v=1;
-    ptr = array;
+    ptr = array; // juz wczesniej inicjalizowalismy wiec teraz przypisujemy adres
+    // array jest wskaznikiem na samego siebie wiec nie trzeba &
+
     for (; ptr<&array[100]; ptr++) {
         *ptr = v;
         v++;
     }
+    // i tu jest cala magia bo mozemy pointerem zmieniac adres a wskazaniem poinera wypelniac calego arraya
+
 
 //     for (int i=0; i < 100; i++)
 //     {
 //         printf("%d\n", array[i]);
 //     }
 
-    for(ptr = &array[0]; ptr < &array[100]; ptr++)
+    for(ptr = &array[0]; ptr < &array[100]; ptr++) // jesli chcemy konkretny adres w arrayu to juz &
     {
         printf("%d\n", *ptr);
     }
-
+    // mozemy na podobnej zasadzie odczytac sobie wszystko
 
 }
